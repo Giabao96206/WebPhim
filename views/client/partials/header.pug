@@ -1,0 +1,273 @@
+link(rel='stylesheet' href='./Component/Icon/themify-icons/themify-icons.css')
+ 
+#header
+  #nav
+    .nav1
+      span.nav-icon
+        a(href="/products")
+          img(src='../../../imgage/logo.webp' alt='')
+    .search-text
+      form#form-search(method='get' action ='/search/tim-kiem')
+        input(placeholder='Tìm kiếm tên diễn viên phim' type='text' name='keyword' id='')
+        i.ti-search
+        ul.goiy
+          img(src="../../../../imgage/Bean Eater@1x-1.0s-200px-200px.svg", alt="" id="#loader" class="loader" )
+          li
+
+      span.close-btn
+        i.ti-close
+
+    .nav1.mobile-header
+      span.menu-btn
+        i.ti-menu
+      span.nav-icon
+        img(src='../../../imgage/logo.webp' alt='')
+      span.search-btn
+        i.ti-search
+
+    .nav2
+      ul.nav-list
+        li.help1.mobile-help1.close
+          a(href='/products') PHIMMOI
+        li.help1.mobile-help1.close
+          a(href="/search/phimle/page-1") PHIM LẺ
+        li.help1.mobile-help1.close
+          a(href='/search/phimbo/page-1') PHIM BỘ
+        li.help1.mobile-help1.list
+          a(href='#') TH&#x1EC2; LO&#x1EA0;I
+          ul.subnav
+            li.category
+              a(href='/search/phim-hanh-dong/page-1') HÀNH ĐỘNG
+            li.category
+              a(href='/search/phim-vo-thuat/page-1') VÕ THUẬT
+            li.category
+              a(href='/search/phim-tinh-cam/page-1') TÌNH CẢM
+            li.category
+              a(href='/search/phim-hai-huoc/page-1') HÀI HƯỚC
+            li.category
+              a(href='/search/phim-vien-tuong/page-1') VIỄN TƯỞNG 
+            li.category
+              a(href='/search/phim-co-trang/page-1') CỔ TRANG
+            li.category
+              a(href='/search/phim-tam-ly/page-1') TÂM LÍ
+            li.category
+              a(href='/search/phim-khoa-hoc/page-1') KHOA HỌC
+            li.category
+              a(href='/search/phim-hinh-su/page-1') HÌNH SỰ
+            li.category
+              a(href='/search/phim-kinh-di/page-1') KINH DỊ
+            li.category
+              a(href='/search/phim-chien-tranh/page-1') CHIẾN TRANH
+            li.category
+              a(href='/search/phim-am-nhac/page-1') ÂM NHẠC
+            li.category
+              a(href='/search/phim-the-thao/page-1') THỂ THAO
+            li.help1
+              a(href='/search/phim-hoc-duong/page-1') HỌC ĐƯỜNG
+ 
+        li.help1.mobile-help1.list
+          a(href='#') QU&#x1ED0;C GIA
+          ul.subnav
+            li.category
+              a(href='/country/trung-quoc/page-1') TRUNG QU&#x1ED0;C
+            li.category
+              a(href='/country/han-quoc/page-1') H&Agrave;N QU&#x1ED0;C
+            li.category
+              a(href='/country/nhat-ban/page-1') NH&#x1EAC;T B&#x1EA2;N
+            li.category
+              a(href='/country/au-mi/page-1') &Acirc;U M&Itilde;
+            li.category
+              a(href='/country/han-quoc/page-1') H&Agrave;N QU&#x1ED0;C
+            li.category
+              a(href='/country/thai-lan/page-1') TH&Aacute;I LAN
+            li.category
+              a(href='/country/tong-hop/page-1') T&#x1ED4;NG H&#x1EE2;P
+            li.category
+              a(href='/country/an-do/page-1') &#x1EA4;N &Dstrok;&#x1ED8;
+        li.help1.mobile-help1.list
+          a(href='#') N&Abreve;M PH&Aacute;T H&Agrave;NH
+          ul.subnav
+            li.category
+              a(href='/search/nam-2025/page-1') Phim 2025
+            li.category
+              a(href='/search/nam-2024/page-1') Phim 2024
+            li.category
+              a(href='/search/nam-2023/page-1') Phim 2023
+            li.category
+              a(href='/search/nam-2022/page-1') Phim 2022
+            li.category
+              a(href='/search/nam-2021/page-1') Phim 2021
+            li.category
+              a(href='/search/nam-2020/page-1') Phim 2020
+            li.category
+              a(href='/search/nam-2019/page-1') Phim 2019
+            li.category
+              a(href='/search/nam-2018/page-1') Phim 2018
+            li.category
+              a(href='/search/nam-2017/page-1') Phim 2017
+            li.category
+              a(href='/search/nam-2016/page-1') Phim 2016
+            li.category
+              a(href='/search/nam-2015/page-1') Phim 2015
+            li.category
+              a(href='/search/nam-2014/page-1') Phim 2014
+            li.category
+              a(href='/search/nam-2013/page-1') Phim 2013
+            li.category
+              a(href='/search/nam-2012/page-1') Phim 2012
+            li.category
+              a(href='/search/nam-2011/page-1') Phim 2011
+            li.category
+              a(href='/search/nam-2010/page-1') Phim 2010
+            li.category
+              a(href='/search/nam-2009/page-1') Phim 2009
+            li.category
+              a(href='/search/nam-2007/page-1') Phim sau 2007
+        li.help1.mobile-help1.list
+          a(href='/search/phim-chieu-rap/page-1') PHIM CHI&#x1EBE;U R&#x1EA0;P
+        li.help1.mobile-help1.close
+          a(href='#') TRAILER
+        li.help1.mobile-help1.list
+          a(href='#') TOP PHIM
+          ul.subnav
+            li.category
+              a(href='#') Phim Netflix
+            li.category
+              a(href='#') Phim DC Comic
+            li.category
+              a(href='#') Phim IMDB
+            li.category
+              a(href='#') Phim TOP
+      form#form-search(method='get' action ='/search/tim-kiem')
+        input(placeholder='Tìm kiếm tên diễn viên phim' type='text' name='keyword'  id='')
+        ul.goiy
+          img(src="../../../../imgage/Bean Eater@1x-1.0s-200px-200px.svg", alt="" id="#loader" class="loader" )
+
+          
+
+
+    .nav2.nav3(style='display: none;')
+      ul.nav-list
+        li.help1.mobile-help1.close
+          a(href='/products') PHIMMOI
+        li.help1.mobile-help1.close
+          a(href="/search/phimle/page-1") PHIM LẺ
+        li.help1.mobile-help1.close
+          a(href='/search/phimbo/page-1') PHIM BỘ
+        li.help1.mobile-help1.list
+          a(href='#') TH&#x1EC2; LO&#x1EA0;I
+          ul.subnav
+            li.category
+              a(href='/search/phim-hanh-dong/page-1') HÀNH ĐỘNG
+            li.category
+              a(href='/search/phim-vo-thuat/page-1') VÕ THUẬT
+            li.category
+              a(href='/search/phim-tinh-cam/page-1') TÌNH CẢM
+            li.category
+              a(href='/search/phim-hai-huoc/page-1') HÀI HƯỚC
+            li.category
+              a(href='/search/phim-vien-tuong/page-1') VIỄN TƯỞNG 
+            li.category
+              a(href='/search/phim-co-trang/page-1') CỔ TRANG
+            li.category
+              a(href='/search/phim-tam-ly/page-1') TÂM LÍ
+            li.category
+              a(href='/search/phim-khoa-hoc/page-1') KHOA HỌC
+            li.category
+              a(href='/search/phim-hinh-su/page-1') HÌNH SỰ
+            li.category
+              a(href='/search/phim-kinh-di/page-1') KINH DỊ
+            li.category
+              a(href='/search/phim-chien-tranh/page-1') CHIẾN TRANH
+            li.category
+              a(href='/search/phim-am-nhac/page-1') ÂM NHẠC
+            li.category
+              a(href='/search/phim-the-thao/page-1') THỂ THAO
+            li.help1
+              a(href='/search/phim-hoc-duong/page-1') HỌC ĐƯỜNG
+ 
+        li.help1.mobile-help1.list
+          a(href='#') QU&#x1ED0;C GIA
+          ul.subnav
+            li.category
+              a(href='/country/trung-quoc/page-1') TRUNG QU&#x1ED0;C
+            li.category
+              a(href='/country/han-quoc/page-1') H&Agrave;N QU&#x1ED0;C
+            li.category
+              a(href='/country/nhat-ban/page-1') NH&#x1EAC;T B&#x1EA2;N
+            li.category
+              a(href='/country/au-mi/page-1') &Acirc;U M&Itilde;
+            li.category
+              a(href='/country/han-quoc/page-1') H&Agrave;N QU&#x1ED0;C
+            li.category
+              a(href='/country/thai-lan/page-1') TH&Aacute;I LAN
+            li.category
+              a(href='/country/tong-hop/page-1') T&#x1ED4;NG H&#x1EE2;P
+            li.category
+              a(href='/country/an-do/page-1') &#x1EA4;N &Dstrok;&#x1ED8;
+        li.help1.mobile-help1.list
+          a(href='#') N&Abreve;M PH&Aacute;T H&Agrave;NH
+          ul.subnav
+            li.category
+              a(href='/search/nam-2025/page-1') Phim 2025
+            li.category
+              a(href='/search/nam-2024/page-1') Phim 2024
+            li.category
+              a(href='/search/nam-2023/page-1') Phim 2023
+            li.category
+              a(href='/search/nam-2022/page-1') Phim 2022
+            li.category
+              a(href='/search/nam-2021/page-1') Phim 2021
+            li.category
+              a(href='/search/nam-2020/page-1') Phim 2020
+            li.category
+              a(href='/search/nam-2019/page-1') Phim 2019
+            li.category
+              a(href='/search/nam-2018/page-1') Phim 2018
+            li.category
+              a(href='/search/nam-2017/page-1') Phim 2017
+            li.category
+              a(href='/search/nam-2016/page-1') Phim 2016
+            li.category
+              a(href='/search/nam-2015/page-1') Phim 2015
+            li.category
+              a(href='/search/nam-2014/page-1') Phim 2014
+            li.category
+              a(href='/search/nam-2013/page-1') Phim 2013
+            li.category
+              a(href='/search/nam-2012/page-1') Phim 2012
+            li.category
+              a(href='/search/nam-2011/page-1') Phim 2011
+            li.category
+              a(href='/search/nam-2010/page-1') Phim 2010
+            li.category
+              a(href='/search/nam-2009/page-1') Phim 2009
+            li.category
+              a(href='/search/nam-2007/page-1') Phim sau 2007
+        li.help1.mobile-help1.list
+          a(href='/search/phim-chieu-rap/page-1') PHIM CHI&#x1EBE;U R&#x1EA0;P
+        li.help1.mobile-help1.close
+          a(href='#') TRAILER
+        li.help1.mobile-help1.list
+          a(href='#') TOP PHIM
+          ul.subnav
+            li.category
+              a(href='#') Phim Netflix
+            li.category
+              a(href='#') Phim DC Comic
+            li.category
+              a(href='#') Phim IMDB
+            li.category
+              a(href='#') Phim TOP
+      form#form-search(method='get' action ='/search/tim-kiem')
+        input(placeholder='Tìm kiếm tên diễn viên phim' type='text' name='keyword'  id='')
+        ul.goiy
+          img(src="../../../../imgage/Bean Eater@1x-1.0s-200px-200px.svg", alt="" id="#loader" class="loader" )
+          li 
+        
+script(src='../../../js/timkiemgoiy.js')
+script(src='../../../js/responsiveheader.js')
+block header
+
+link(rel='stylesheet' href='../../../css/styleheader.css')
+link(rel="stylesheet", href="../../../css/headerresponsive.css")

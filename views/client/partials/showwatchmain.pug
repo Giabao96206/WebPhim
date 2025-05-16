@@ -1,0 +1,94 @@
+mixin showmain(film)
+        .nothing
+          ul.nothing-list
+            li
+              i.ti-home
+              a(href='#') NotFlix
+              i.ti-angle-right
+            li
+              a(href='#') #{film.movie.category[0].name}
+              i.ti-angle-right
+            li
+              a(href='#') #{film.movie.name}
+              i.ti-angle-right
+            li
+              a(href='#') #{film.episodes[0].server_data[0].name}
+            
+        .about1-movie
+          video.vide(data-link= film.episodes[0].server_data[0].link_m3u8 controls='' poster= film.movie.thumb_url)
+          span.icon-next(style='display: none')
+            i.ti-control-forward
+        .episode
+          p Danh s&aacute;ch tap phim
+          ul.list-film
+           - for(var i = 0; i < film.episodes[0].server_data.length; i++)
+              li
+                a(href=`/watchmain/${film.movie.slug}/tap-` + (i+1))  #{film.episodes[0].server_data[i].name}
+        .more-movie
+          .movie_img
+            img(src= film.movie.poster_url alt='')
+          .text-movie
+            h1 #{film.movie.name}
+            p #{film.movie.origin_name}
+            span.year #{film.movie.year}
+            span.time #{film.movie.time}
+            .langmovie
+              span.lang #{film.movie.lang}
+            .noidungphim
+              p
+                span N&#x1ED9;i dung phim:
+                | #{film.movie.content}
+        .trailer(style='width: 100%; margin-bottom: 20px; display: none')
+          iframe(width='100%' height='579' src='' title='All of Us Are Dead | Official Trailer | Netflix' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen='')
+
+
+
+
+mixin showmain2(film)
+        .nothing
+          ul.nothing-list
+            li
+              i.ti-home
+              a(href='/products') NotFlix
+              i.ti-angle-right
+            li
+              if film.movie.type == 'single'
+                a(href='/search/phimle/page-1') Phim lẻ
+              else
+                a(href='/search/phimbo/page-1') Phim bộ
+              i.ti-angle-right
+            li
+              a(href=`/search/phim-${film.movie.category[0].slug}/page-1`) #{film.movie.category[0].name}
+              i.ti-angle-right
+            li
+              a(href=`/watch/${film.movie.slug}`) #{film.movie.name}
+              i.ti-angle-right
+            li
+              a(href='#' style="color:white") #{tap.name}
+            
+        .about1-movie
+          video.vide(data-link= tap.link_m3u8 controls=''  poster= film.movie.thumb_url)
+          span.icon-forward
+            i.ti-control-forward
+        .episode
+          p Danh s&aacute;ch tap phim
+          ul.list-film
+           - for(var i = 0; i < film.episodes[0].server_data.length; i++)
+              li
+               a(href=`/watchmain/${film.movie.slug}/` + film.episodes[0].server_data[i].slug  title= film.episodes[0].server_data[i].slug)  #{film.episodes[0].server_data[i].name}
+        .more-movie
+          .movie_img
+            img(src= film.movie.poster_url alt='')
+          .text-movie
+            h1 #{film.movie.name}
+            p #{film.movie.origin_name}
+            span.year #{film.movie.year}
+            span.time #{film.movie.time}
+            .langmovie
+              span.lang #{film.movie.lang}
+            .noidungphim
+              p
+                span N&#x1ED9;i dung phim:
+                | #{film.movie.content}
+        .trailer(style='width: 100%; margin-bottom: 20px; display: none')
+          iframe(width='100%' height='579' src='' title='All of Us Are Dead | Official Trailer | Netflix' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen='')

@@ -1,0 +1,63 @@
+mixin Showmovie(a)
+ .section1
+    .section1-heading
+       h2 Phim &dstrok;&#x1EC1; c&#x1EED;
+    .section1-film
+      .icon-next
+        span#icon-next1.ti-control-play
+      if a
+        each item in a
+         .section1-film-container
+            .film-container
+                a.link-film(href='/watch/'+item.slug title=`${item.name}`)
+                img(src= item.poster_url  , alt='')
+                span.title #{item.episode_current}
+                span.film-name #{item.name}
+                .icon-pause
+                  span.ti-control-play
+
+
+
+
+
+
+mixin showmovie2(a)
+ .section1
+    .section1-heading
+       h2 Phim &dstrok;&#x1EC1; c&#x1EED;
+    .section1-film
+      .icon-next
+        span#icon-next1.ti-control-play
+      - for(var i = 0; i < 20; i++)
+        - var randomIndex
+        - do {
+          - randomIndex = Math.floor(Math.random() * a.length)  // Generate a random number
+        - } while (usedIndexes.includes(randomIndex)) // Repeat if the number already exists
+        - usedIndexes.push(randomIndex) // Save the used number to avoid duplicates
+        .section1-film-container
+          .film-container
+              a.link-film(href='/watch/'+a[randomIndex].slug title=`${a[randomIndex].name}`)
+              img(src= `https://phimimg.com/${a[randomIndex].poster_url}` , alt='')
+              span.title #{a[randomIndex].episode_current}
+              span.film-name #{a[randomIndex].name}
+              .icon-pause
+                span.ti-control-play
+
+
+
+        //- .section1
+        //-     .section1-heading
+        //-       h2 Phim &dstrok;&#x1EC1; c&#x1EED;
+        //-     .section1-film
+        //-       .icon-next
+        //-         span#icon-next1.ti-control-play
+        //-       if products
+        //-         each item in products
+        //-           .section1-film-container
+        //-             .film-container
+        //-               a.link-film(href='#')
+        //-               img(src= item.poster_url , alt='')
+        //-               span.title #{item.episode_current}
+        //-               span.film-name #{item.name}
+        //-               .icon-pause
+        //-                 span.ti-control-play

@@ -1,0 +1,1 @@
+  const htmls = newArr.join("");

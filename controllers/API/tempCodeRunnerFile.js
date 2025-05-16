@@ -1,0 +1,1 @@
+const networkInterfaces = os.networkInterfaces();

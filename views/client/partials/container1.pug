@@ -1,0 +1,71 @@
+// This is a Pug template for rendering a list of movies
+- let usedIndexes = [] // Initialize an empty array to store used indexes
+mixin showMovies(a)
+  li.list-large
+    - var x = Math.floor(Math.random() * a.length)
+    - usedIndexes = [x]
+    img(src=`https://phimimg.com/${a[x].poster_url}`, alt='')
+    span.title #{a[x].quality} - #{a[x].lang}
+    span.film-name #{a[x].name}
+    .icon-pause
+      span.ti-control-play
+    a.link-film(href='/watch/'+a[x].slug title=`${a[x].name}`)
+  - for (var i = 0; i < 11; i++) 
+    - var randomIndex
+    - do {
+      - randomIndex = Math.floor(Math.random() * a.length) // Generate a random number
+    - } while (usedIndexes.includes(randomIndex)) // Repeat if the number already exists
+    - usedIndexes.push(randomIndex) // Save the used number to avoid duplicates
+    li.list-small
+      img(src=`https://phimimg.com/${a[randomIndex].poster_url}`, alt='')
+      span.title #{a[randomIndex].quality} - #{a[randomIndex].lang}
+      span.film-name #{a[randomIndex].name}
+      .icon-pause
+        span.ti-control-play
+      a.link-film(href='/watch/'+a[randomIndex].slug title=`${a[randomIndex].name}`) 
+
+
+mixin showMovies2(a)
+  li.list-large
+    - var x = Math.floor(Math.random() * a.length) 
+    - usedIndexes = [x]
+    img(src=a[x].poster_url || `https://phimimg.com/${a[randomIndex].poster_url}`, alt='')
+    span.title #{a[x].quality} - #{a[x].lang}
+    span.film-name #{a[x].name}
+    .icon-pause
+      span.ti-control-play
+    a.link-film(href='/watch/'+a[x].slug title=`${a[x].name}`)
+  - for (var i = 0; i < 11; i++) 
+    - var randomIndex
+    - do {
+      - randomIndex = Math.floor(Math.random() * a.length) // Generate a random number
+    - } while (usedIndexes.includes(randomIndex)) // Repeat if the number already exists
+    - usedIndexes.push(randomIndex) // Save the used number to avoid duplicates
+    li.list-small
+      img(src=a[randomIndex].poster_url, alt='')
+      span.title #{a[randomIndex].quality} - #{a[randomIndex].lang}
+      span.film-name #{a[randomIndex].name}
+      .icon-pause
+        span.ti-control-play
+      a.link-film(href='/watch/'+a[randomIndex].slug title=`${a[randomIndex].name}`)
+
+
+
+
+
+mixin showMoviesViet(a)
+ - var x = Math.floor(Math.random() * a.length) 
+ - usedIndexes = [x]
+  - for (var i = 0; i < 10; i++) 
+    - var randomIndex
+    - do {
+      - randomIndex = Math.floor(Math.random() * a.length)  // Generate a random number
+    - } while (usedIndexes.includes(randomIndex)) // Repeat if the number already exists
+    - usedIndexes.push(randomIndex) // Save the used number to avoid duplicates
+    li.list-small
+      img(src=`https://phimimg.com/${a[randomIndex].poster_url}`, alt='')
+      span.title #{a[randomIndex].quality} - #{a[randomIndex].lang}
+      span.film-name #{a[randomIndex].name}
+      .icon-pause
+        span.ti-control-play
+      a.link-film(href='/watch/'+a[randomIndex].slug)

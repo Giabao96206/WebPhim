@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='../../../../css/stylewatch.css')
+    link(rel="stylesheet", href="../../../../Icon/themify-icons/themify-icons.css")
+
+  body
+block header
+  include ../../partials/header
+  include ../../partials/container1
+  include ../../partials/container2
+  include ../../partials/showWatch
+  link(rel="stylesheet", href="../../../../Icon/themify-icons/themify-icons.css")
+
+
+    
+#fb-root
+script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0&appId=1030927452270689')
+
+
+.main-content
+  .content
+    .container
+      .movie
+        +showWatch(film)
+        .comment-fb
+          .fb-comments(data-href='https://developers.facebook.com/docs/plugins/comments#configurator' data-width='100%' data-numposts='5' data-colorscheme='light' data-mobile='true' data-order-by='reverse_time' style='color: black; background-color: white')
+      +showmovie2(phimbo)
+
+
+block footer 
+  include ../../partials/footer
+ 
+script(src="../../../../js/watchlist.script.js") 
+
+link(rel="stylesheet", href="../../../../css/stylewatch.css")
+link(rel='stylesheet', href='../../../../css/watchresponesive.css')

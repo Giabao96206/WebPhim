@@ -1,0 +1,94 @@
+mixin showWatch(film)
+        .nothing
+          ul.nothing-list
+            li
+              i.ti-home
+              a(href='#') NotFlix
+              i.ti-angle-right
+            li    
+              if film.movie.type == 'single'
+                a(href='/search/phimle/page-1') Phim lẻ
+              else
+                a(href='/search/phimbo/page-1') Phim bộ
+              i.ti-angle-right
+            li
+              a(href='#') #{film.movie.category[0].name}
+              i.ti-angle-right
+            li
+              a(href='#') #{film.movie.name}
+ 
+        .about1-movie(style=`background-image: url('${film.movie.thumb_url}')`)
+          img(src= film.movie.poster_url alt='')
+          .text
+            h1 #{film.movie.name}
+            p #{film.movie.origin_name}
+            ul.list-button
+              li
+                a(href= `${film.movie.trailer_url}` )
+                  i.ti-youtube
+                  | Trailer
+              li
+                a(href=`/watchmain/${film.movie.slug}/` + film.episodes[0].server_data[0].slug )
+                  i.ti-control-play
+                  | Xem phim
+        .episode
+          p Danh s&aacute;ch tap phim
+          ul.list-film
+           - for(var i = 0; i < film.episodes[0].server_data.length; i++)
+              li
+               a(href=`/watchmain/${film.movie.slug}/` + film.episodes[0].server_data[i].slug  title= film.episodes[0].server_data[i].slug)  #{film.episodes[0].server_data[i].name}
+        .more-movie
+          .social
+            .sharelike
+              a.like(href='#') Th&iacute;ch
+              a.share(href='#')
+                i.ti-facebook
+                |  Chia s&#x1EBB;
+            .vote
+              .start-outer ★★★★★ ★★★★★
+                #stars-inner.stars-inner(leng=`${film.movie.tmdb.vote_average}`)
+
+          .info-movie
+            ul.information
+              li
+                span &Dstrok;ang ph&aacute;t: 
+                a(href='#') #{film.movie.quality} #{film.movie.lang}
+              li
+                span N&abreve;m ph&aacute;t h&agrave;nh: 
+                a(href='#') #{film.movie.year}
+              li
+                span Qu&#x1ED1;c gia: 
+                a(href='#') #{film.movie.country[0].name}
+              li
+                span Th&#x1EC3; lo&#x1EA1;i: 
+                 - for(let i = 0; i < film.movie.category.length; i++)
+                    - if(i < film.movie.category.length - 1)
+                      a(href='#') #{film.movie.category[i].name}, 
+                    - else
+                      a(href='#') #{film.movie.category[i].name}
+              li
+                span &Dstrok;&#x1EA1;o di&#x1EC5;n: 
+                a(href='#') #{film.movie.director[0]}
+              li
+                span Th&#x1EDD;i l&#x1B0;&#x1EE3;ng: 
+                a(href='#') #{film.movie.time}
+              li(style="width: 100%")
+                span Di&#x1EC5;n Vi&ecirc;n: 
+                 - for(let i = 0; i < film.movie.actor.length; i++)
+                    - if(i < film.movie.category.length - 1)
+                      a(href='#') #{film.movie.actor[i]}, 
+                    - else
+                      a(href='#') #{film.movie.actor[i]}, 
+              li
+          .content-film
+            h2 N&#x1ED9;i dung Phim
+            .content
+              p
+                | #{film.movie.content}  
+        .trailer(style='width: 100%; margin-bottom: 20px; display: none')
+           iframe(width='100%' height='579' src='' title='' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen='')
+
+ 
+
+
+           

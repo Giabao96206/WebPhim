@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='../../../../css/stylesearch.css')
+    link(rel="stylesheet", href="../../../../Icon/themify-icons/themify-icons.css")
+    link(rel="stylesheet", href="../../../../css/searchresponsive.css")
+  body
+block header
+  include ../../partials/header
+  include ../../partials/search2main
+  link(rel="stylesheet", href="../../../../Icon/themify-icons/themify-icons.css")
+  script(src='https://cdn.jsdelivr.net/npm/hls.js@latest')
+// Phần content
+.main-content
+  .mainhotro 
+  .content
+    .container
+      +show(film, name)
+
+block footer 
+  include ../../partials/footer
+script.
+  let part = window.location.pathname.split("/");
+  let num = parseInt(part[3].split("-")[1]);
+  let leng = !{JSON.stringify(leng)}
+  console.log(leng);
+
+script(src="../../../../js/phantrang.api.js") 
+script(src="../../../../js/phantrang.js") 
+
+    

@@ -1,0 +1,104 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='../../../../css/watchresponesive.css')
+    link(rel='stylesheet', href='../../../../css/stylewatchmain.css')
+    link(rel="stylesheet", href="../../../../css/watchmainresponesive.css")
+    link(rel='stylesheet', href='./Component/Icon/themify-icons/themify-icons.css')
+
+  body
+block header
+  include ../../partials/header
+  include ../../partials/container1
+  include ../../partials/container2
+  include ../../partials/showWatch
+  include ../../partials/showwatchmain
+
+  link(rel="stylesheet", href="../../../../Icon/themify-icons/themify-icons.css")
+  link(rel="stylesheet", href="../../../../css/headerresponsive.css")
+  script(src='https://cdn.jsdelivr.net/npm/hls.js@latest')
+#fb-root
+script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0&appId=1030927452270689')
+
+
+// Thanh Header
+// Phần Cotent
+.main-content
+  .content
+    .container
+      .movie
+        +showmain(film)
+        .comment-fb
+          .fb-comments(data-href='https://developers.facebook.com/docs/plugins/comments#configurator' data-width='100%' data-numposts='10' data-colorscheme='light' data-mobile='true' data-order-by='reverse_time' style='color: black; background-color: white')
+      +showmovie2(phimbo)
+block footer 
+  include ../../partials/footer
+
+script.
+  const products = document.querySelectorAll(
+  ".main-content .content .container .section1-film-container"
+  );
+  const observer = new IntersectionObserver(
+  (entries) => {
+  entries.forEach((entry) => {
+  if (entry.isIntersecting) {
+  entry.target.classList.add("active");
+  } else {
+  entry.target.classList.remove("active");
+  }
+  });
+  },
+  {
+  root: document.querySelector(".section1-film"), // Giới hạn quan sát trong vùng cuộn
+  rootMargin: "0px",
+  threshold: 0.6, // Khi 60% sản phẩm vào vùng nhìn thấy thì kích hoạt hiệu ứng
+  }
+  );
+  // Gán observer cho từng sản phẩm
+  products.forEach((product) => {
+  observer.observe(product);
+  });
+  const productss = document.querySelectorAll(
+  ".main-content .content .container #section2 .section1-film-container"
+  );
+  const observers = new IntersectionObserver(
+  (entries) => {
+  entries.forEach((entry) => {
+  if (entry.isIntersecting) {
+  entry.target.classList.add("active");
+  } else {
+  entry.target.classList.remove("active");
+  }
+  });
+  },
+  {
+  root: document.querySelector(".section1-film"), // Giới hạn quan sát trong vùng cuộn
+  rootMargin: "0px",
+  threshold: 0.6, // Khi 60% sản phẩm vào vùng nhìn thấy thì kích hoạt hiệu ứng
+  }
+  );
+  // Gán observer cho từng sản phẩm
+  products.forEach((product) => {
+  observer.observe(product);
+  });
+script.
+  let video = document.querySelector(
+  ".main-content .content .container .movie .about1-movie .vide"
+  );
+  let a = video.dataset.link;
+  console.log(a);
+  const videoSrc = a;
+  if (Hls.isSupported()) {
+  var hls = new Hls();
+  hls.loadSource(videoSrc);
+  hls.attachMedia(video);
+  } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+  video.src = videoSrc;
+  } else {
+  alert("Trình duyệt của bạn không hỗ trợ HLS.");
+  }
+
+ 
